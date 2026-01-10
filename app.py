@@ -1,5 +1,4 @@
-#Dev Mueid Mursalin Rifat
-
+#dev Mueid Mursalin Rifat 
 from flask import Flask, request, Response, jsonify, send_file
 import requests
 import uuid
@@ -16,6 +15,10 @@ CLIENT_ID = "pSgX7WgjukXCBoYwDM8G8GLnRRkvAoJlqa5eAVvj95o"
 @app.route("/")
 def index():
     return send_file("index.html")
+
+@app.route("/health")
+def health():
+    return jsonify({"status": "ok", "message": "ShadowX-MagicStudio is running"}), 200
 
 @app.route("/generate", methods=["GET"])
 def generate():
@@ -64,6 +67,7 @@ def generate():
     # --- Error or JSON response ---
     return Response(r.text, status=r.status_code)
 
-#End 
+#End Dev Mueid Mursalin Rifat
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=5000, debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=False)
