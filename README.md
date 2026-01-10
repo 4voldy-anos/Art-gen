@@ -3,6 +3,8 @@ ShadowX-MagicStudio AI Art Generator
 
 A simple web app that creates AI art from text with a galaxy theme.
 
+➤DEMO LINK: shadowx-art-gen.onrender.com
+
 Quick Start
 
 1. Install:
